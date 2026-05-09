@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+  <title>AppsSphere</title>
+
+  <meta
+    name="description"
+    content="AppsSphere creates high-quality Android and iOS apps focused on productivity, relaxation and modern mobile experiences."
+  />
+
+  <style>
+    *{
+      margin:0;
+      padding:0;
+      box-sizing:border-box;
+    }
+
+    html{
+      scroll-behavior:smooth;
+    }
+
+    body{
+      font-family: Inter, Arial, sans-serif;
+      background:#0b0f19;
+      color:white;
+      overflow-x:hidden;
+    }
+
+    a{
+      text-decoration:none;
+      color:inherit;
+    }
+
+    .container{
+      width:92%;
+      max-width:1200px;
+      margin:auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header{
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+
+    .bg-glow{
+      position:absolute;
+      width:600px;
+      height:600px;
+      background:radial-gradient(circle, rgba(86,126,255,0.35), transparent 70%);
+      filter:blur(60px);
+      top:-150px;
+      left:50%;
+      transform:translateX(-50%);
+      z-index:0;
+    }
+
+    .hero{
+      position:relative;
+      z-index:2;
+    }
+
+    .hero h1{
+      font-size:72px;
+      margin-bottom:20px;
+      letter-spacing:-2px;
+    }
+
+    .hero p{
+      font-size:22px;
+      color:#b7c0d8;
+      max-width:760px;
+      margin:auto;
+      line-height:1.7;
+    }
+
+    .hero-buttons{
+      margin-top:40px;
+      display:flex;
+      gap:18px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+
+    .btn{
+      padding:16px 28px;
+      border-radius:14px;
+      font-weight:700;
+      transition:0.25s;
+      display:inline-block;
+    }
+
+    .btn-primary{
+      background:white;
+      color:black;
+    }
+
+    .btn-primary:hover{
+      transform:translateY(-2px);
+      opacity:0.95;
+    }
+
+    .btn-secondary{
+      background:#1b2335;
+      border:1px solid rgba(255,255,255,0.08);
+    }
+
+    .btn-secondary:hover{
+      background:#26304a;
+    }
+
+    /* =========================
+       SECTION
+    ========================== */
+
+    section{
+      padding:110px 0;
+    }
+
+    .section-title{
+      font-size:42px;
+      margin-bottom:18px;
+      letter-spacing:-1px;
+    }
+
+    .section-subtitle{
+      color:#a5afc5;
+      margin-bottom:50px;
+      max-width:700px;
+      line-height:1.7;
+    }
+
+    /* =========================
+       APPS GRID
+    ========================== */
+
+    .apps-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+      gap:28px;
+    }
+
+    .app-card{
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.06);
+      border-radius:24px;
+      overflow:hidden;
+      transition:0.3s ease;
+      backdrop-filter:blur(10px);
+    }
+
+    .app-card:hover{
+      transform:translateY(-6px);
+      border-color:rgba(255,255,255,0.15);
+    }
+
+    .app-image{
+      width:100%;
+      height:220px;
+      object-fit:cover;
+      background:#121826;
+    }
+
+    .app-content{
+      padding:26px;
+    }
+
+    .app-content h3{
+      font-size:28px;
+      margin-bottom:12px;
+    }
+
+    .app-content p{
+      color:#aab4cb;
+      line-height:1.7;
+      margin-bottom:24px;
+      min-height:78px;
+    }
+
+    .store-buttons{
+      display:flex;
+      gap:14px;
+      flex-wrap:wrap;
+    }
+
+    /* =========================
+       INFO BLOCKS
+    ========================== */
+
+    .info-grid{
+      display:grid;
+      grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
+      gap:24px;
+    }
+
+    .info-card{
+      background:rgba(255,255,255,0.03);
+      border:1px solid rgba(255,255,255,0.06);
+      border-radius:24px;
+      padding:32px;
+    }
+
+    .info-card h3{
+      font-size:24px;
+      margin-bottom:14px;
+    }
+
+    .info-card p{
+      color:#aab4cb;
+      line-height:1.7;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer{
+      padding:60px 0;
+      text-align:center;
+      border-top:1px solid rgba(255,255,255,0.06);
+      color:#8892ab;
+    }
+
+    /* =========================
+       MOBILE
+    ========================== */
+
+    @media(max-width:768px){
+
+      .hero h1{
+        font-size:48px;
+      }
+
+      .hero p{
+        font-size:18px;
+      }
+
+      .section-title{
+        font-size:34px;
+      }
+
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header>
+    <div class="bg-glow"></div>
+
+    <div class="container hero">
+      <h1>AppsSphere</h1>
+
+      <p>
+        We create elegant and high-quality mobile applications focused on
+        productivity, relaxation and modern user experiences for Android and iOS users worldwide.
+      </p>
+
+      <div class="hero-buttons">
+        <a href="#apps" class="btn btn-primary">
+          Explore Apps
+        </a>
+
+        <a href="mailto:support@appssphere.com.br" class="btn btn-secondary">
+          Contact Support
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- APPS -->
+  <section id="apps">
+    <div class="container">
+
+      <h2 class="section-title">Our Apps</h2>
+
+      <p class="section-subtitle">
+        Discover beautifully designed applications built to improve focus,
+        relaxation, productivity and everyday experiences.
+      </p>
+
+      <div class="apps-grid" id="appsContainer"></div>
+
+    </div>
+  </section>
+
+  <!-- INFO -->
+  <section>
+    <div class="container">
+
+      <div class="info-grid">
+
+        <div class="info-card">
+          <h3>About Us</h3>
+
+          <p>
+            AppsSphere is an independent mobile app studio focused on building
+            premium-quality digital experiences with performance, simplicity and elegant design.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Privacy</h3>
+
+          <p>
+            Our applications may use trusted third-party services such as analytics,
+            advertising and subscription providers to improve app performance and user experience.
+          </p>
+        </div>
+
+        <div class="info-card">
+          <h3>Support</h3>
+
+          <p>
+            Need help or have questions about our applications?
+            Contact us anytime at:
+            <br><br>
+            <strong>support@appssphere.com.br</strong>
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    © 2026 AppsSphere. All rights reserved.
+  </footer>
+
+  <script>
+
+    /*
+    ==========================================
+    ADD NEW APPS HERE
+    ==========================================
+    */
+
+    const apps = [
+
+      {
+        name: "Sleep Sounds",
+        description:
+          "Relaxing white noise, rain and ambient sounds for sleep, meditation and focus.",
+
+        image:
+          "https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1200&auto=format&fit=crop",
+
+        playStore:
+          "https://play.google.com/",
+
+        appStore:
+          "https://www.apple.com/app-store/"
+      },
+
+      {
+        name: "Habit Tracker",
+        description:
+          "Build powerful routines, stay productive and track your daily habits with simplicity.",
+
+        image:
+          "https://images.unsplash.com/photo-1499750310107-5fef28a66643?q=80&w=1200&auto=format&fit=crop",
+
+        playStore:
+          "https://play.google.com/",
+
+        appStore:
+          "https://www.apple.com/app-store/"
+      },
+
+      {
+        name: "LED Scroller",
+        description:
+          "Create beautiful scrolling LED text banners for events, messages and entertainment.",
+
+        image:
+          "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=1200&auto=format&fit=crop",
+
+        playStore:
+          "https://play.google.com/",
+
+        appStore:
+          "https://www.apple.com/app-store/"
+      }
+
+    ];
+
+
+    /*
+    ==========================================
+    RENDER APPS
+    ==========================================
+    */
+
+    const container = document.getElementById("appsContainer");
+
+    apps.forEach(app => {
+
+      const card = document.createElement("div");
+
+      card.className = "app-card";
+
+      card.innerHTML = `
+        <img
+          class="app-image"
+          src="${app.image}"
+          alt="${app.name}"
+        />
+
+        <div class="app-content">
+
+          <h3>${app.name}</h3>
+
+          <p>${app.description}</p>
+
+          <div class="store-buttons">
+
+            <a
+              href="${app.playStore}"
+              target="_blank"
+              class="btn btn-primary"
+            >
+              Google Play
+            </a>
+
+            <a
+              href="${app.appStore}"
+              target="_blank"
+              class="btn btn-secondary"
+            >
+              App Store
+            </a>
+
+          </div>
+
+        </div>
+      `;
+
+      container.appendChild(card);
+
+    });
+
+  </script>
+
+</body>
+</html>
